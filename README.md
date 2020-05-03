@@ -16,6 +16,14 @@ Site-ul are o grafică placută, ușor de navigat, fiecare pagină având o leg�
 Am urmărit să proiectez un site atractiv pentru utilizatori. Am alternat tipurile de obiecte pentru a nu deveni monotonă navigarea, iar conținutul l-am prezentat în paragrafe scurte, concise, schematizate. Mesajele sunt ușor de înțeles, iar conținutul informațional este bine structurat.<br><br>
 Având în vedere că scopul principal al acestui site este acela de a transmite informații, pentru ca acestea să poată fi recepționate de utilizatori, trebuie să fie prezentate într-un mod care facilitează perceperea lor.
 
+## Screenshots
+<div style="text-align: center;">
+<img width="950" height="550" src="./screenshots/logare.png">
+</div>
+<br>
+<div style="text-align: center;">
+<img width="950" height="550" src="./screenshots/pornire.png">
+</div>
 ## Softul utilizat la proiectarea şi realizarea site-ului
 Pentru a realiza pagina web am utilizat limbajele HTML, CSS, JavaScript, PHP şi MySQL.<br><br>  
 Cu ajutorul acestora, am redat informaţiile despre Vlad Țepeș, astfel încât să fie uşor de urmărit şi să capteze atenţia celui care navighează în acest site.<br><br>                                                                                                          Utilizand PHP am  facut legatura între: tabelele din baza de date și pagina de admin, casetele text “Utilizator” și “Parolă”, din pagina principal, cu tabelul “useri”, mesajele primite de la utilizatorii paginii cu tabelul “contact”.<br><br>      
