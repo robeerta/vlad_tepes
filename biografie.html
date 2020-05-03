@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+   background: linear-gradient(to bottom, #000000 0%, #cc0000 100%);
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+  left: 31px;
+  }
+  
+  /* Full-width containers */
+  .container {
+  width: 100%;
+  padding-left: 70px;
+  padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+  left: 60px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after, .right::after {
+  left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .right {
+  left: 0%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <h2>1431</h2>
+      <p>Nașterea lui Vlad III Dracula-Țepeș, tatăl lui Țepeș - Vlad II Dracul se alătură Ordinului Dragonului, fondat în 1387 de regele maghiar Sigismund de Luxemburg.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1436</h2>
+      <p>Vlad II Dracul urcă pe tronul Țării Românești. Probabil, în același an - nașterea lui Radu cel Fourmos (transcris uneori ca „Furmosh” sau „Frumos”).</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1437-1438</h2>
+      <p>Vlad II Dracul încheie o alianță forțată cu Muhammad II, sultanul Imperiului Otoman. Țara Românească dobândește statutul de „Mumtaz Eyyaleti” - o provincie privilegiată din interiorul Imperiului Otoman.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1438</h2>
+      <p>Armata otomană, care include trupele sârbe, face o campanie prădătoare în Țara Românească. Vlad II Dracul este obligat să-i însoțească.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1442</h2>
+      <p>Sultanul se îndoiește de fidelitatea lui Vlad II Dracula, însoțit de Vlad III Dracula-Țepeș și Radu cel Fourmos la Adrianopol.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1443</h2>
+      <p>Vlad II Dracul părăsește Adrianopolul, lăsând ostaticii lui Radu și Vlad, care, după câteva luni, sunt transferați în cetatea Egriguez.</p>
+    </div>
+  </div>
+    <div class="container left">
+    <div class="content">
+      <h2>1444</h2>
+      <p>Din vina lui Vladislav I, Regele Ungariei, Boemiei și Croației, a fost pierdută bătălia de la Varna (Cruciada Varna). <br>Vladislav I moare.<br> Janos Hunyadi Corvin fuge de pe câmpul de luptă, aproape imediat a urmat arestarea sa, făcută de Vlad II Dracula.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1445</h2>
+      <p>O nouă campanie în Țara Românească de Sud condusă de Vlad II Dracula. <br>Țara Românească redobândește cetățile Dunării cucerite de turci. <br>Ladislav V, Postum urcă pe tronul Ungariei.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1445-1447</h2>
+      <p>Janos Hunyadi Corvin este eliberat, într-o luptă politică dificilă și obține titlul de regent al Ungariei sub tânărul Ladislav Postum.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1448 (vara)</h2>
+      <p>Prin ordin direct, Janos Hunyadi Corvin l-a executat pe Vlad II Dracul.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1448 (octombrie)</h2>
+      <p>Muhammad II îl eliberează pe Vlad al III-lea Dracula-Țepeș, astfel încât să ia tronul Țării Românești.<br> Radu cel Fourmos rămâne ostatic.<br> Bătălia de pe câmpul Kosovo este pierdută.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1448 (decembrie)</h2>
+      <p>Janos Hunyadi Corvin se întoarce în Țara Românească, îl deplasează pe Vlad III Dracula pe tronul Valah, se întoarce în Ungaria, lăsându-l pe Vladislav Denesti II ca guvernator. <br>Vlad III Dracula-Țepeș fuge în Moldova sub auspiciile lui Bogdan Moldovei, unde îl întâlnește pe Ștefan cel Mare.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1449-1451</h2>
+      <p>Vlad III Dracula-Țepes participă la ostilitățile Moldovei împotriva Poloniei.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1451</h2>
+      <p>Bogdan Moldavsky moare.<br> Vlad III Dracula-Țepes și Ștefan cel Mare se mută în Transilvania sub protecția lui Janos Hunyadi Corvin.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1453</h2>
+      <p>Capturarea de către turci a Constantinopolului, căderea Imperiului Bizantin.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1456 (21-22 iulie)</h2>
+      <p>Vlad III Dracula-Țepes împreună cu Janos Hunyadi Corvin participă la Bătălia de la Belgrad, în care armata otomană este învinsă, fapt care împiedică înaintarea turcilor spre vest.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1456 (8 august)</h2>
+      <p>Janos Hunyadi Corvin moare de ciumă, iar tronul ungar trece la Ladislav Postum.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1456 (20 august)</h2>
+      <p>Moartea lui Vladislav II Danesti la mâna lui Vlad III Dracula-Țepes.</p>
+    </div>
+  </div>
+    <div class="container left">
+    <div class="content">
+      <h2>1456 (22 august)</h2>
+      <p>Tronul valah, cu sprijinul lui Ladislav Postum, trece la Vlad III Dracula-Țepes.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1456-1457</h2>
+      <p>Vlad III Dracula-Țepes cucerește Transilvania, începe represalii împotriva comercianților coloniali transilvăneni.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1457</h2>
+      <p>Vlad III Dracula-Tepes ajută la luarea tronului Moldovei la Ștefan cel Mare.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1457</h2>
+      <p>Tronul Ungariei trece lui Matthias Hunyadi Corvin, care primește o sumă mare din partea papei pentru a organiza o cruciadă.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1457-1459</h2>
+      <p>Vlad încetează treptat să-i aducă un omagiu sultanului. <br>Pe granițele Țării Românești, derapajele locale cu beie erup din ce în ce mai mult. Cu toate acestea, vasalitatea formală a Țării Românești în raport cu Imperiul Otoman este încă păstrată.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1460</h2>
+      <p>Muhammad cere plata tributului. Vlad este descurajat. Sultanul crește mărimea tributului.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1461 (iarna)</h2>
+      <p>Muhammad îl invită pe Vlad III Dracula-Țepeș la negocieri cu privire la problemele de frontieră într-una dintre cetățile din sudul Munteniei - Giurgiu.<br> Vlad refuză, oferind o întâlnire într-un teritoriu neutru și deschis, iar turcii sunt de acord. <br>Yunus Bey este trimis pentru negocieri, sprijinul militar fiind asigurat de comandantul cetății Nikopol Khamza Pașa cu o armată de 4.000 de oameni.<br> Nu o singură persoană se întoarce de la negocieri în Turcia (după ce i-a înconjurat pe turci, Vlad III Dracula-Țepeș îi învinge cu o armată de 3.000 de oameni).</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1461 (iarnă-primăvară)</h2>
+      <p>Blitzkrieg pe cetățile de frontieră capturate de turci.<br> Vlad III Dracula-Țepeș, printre altele, surprinde obiecte atât de mari și importante din punct de vedere strategic, precum Novigrad și Turtukay.<br> Numărul total al celor uciși în funcție de rezultatele blitzkriegului: Giurgiu - 6414, Novigrad - 384, Turtukai - 630. <br>Total: 23809.<br> Din cei uciși, jumătate au fost otomani, jumătate au fost albanezi.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1461 (vara)</h2>
+      <p>Vlad III Dracula-Țepes se căsătorește cu vara lui Matthias Corvin (diverse presupuneri - Lydia, Matilda, Elena - ).</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1461 (presupus)</h2>
+      <p>Nașterea lui Michni ("Michal" - "Mihnea") cel Reu (o altă variantă a transcrierii: "Răul" - "Rău"), fiul cel mai mare al lui Vlad.</p>
+	</div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1462 (primăvara) </h2>
+   <p>Muhammad trimite o expediție punitivă de 30 de mii de oameni condusă de Mahmoud Pașa. Dintre aceștia, 12 mii rămân în cetățile de frontieră, restul traversează Dunărea și încep o campanie prădătoare.<br> Când armata otomană se întoarce din atac, Vlad III Dracula-Țepes și forțele armatei personale lovesc. <br>Ucid 10 mii de turci, eliberează garnizoanele capturate și prizonieri.</p>
+	</div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1462 (vara)</h2>
+      <p>Muhammad cu o armată de 250 de mii merge într-o expediție punitivă, fiind însoțit de Radu cel Fourmos.<br> Vlad III Dracula-Țepeș anunță mobilizarea generală. Dintre aliați, numai Stefan cel Mare și Matthias Corvin răspund.<br> Valahii folosesc tactici pământești. <br>Transportul de produse pentru armata otomană de-a lungul Dunării este blocat de cetatea Kiliya, care aparține formal lui Matthias Corvin.<br> Soldul puterii: 32 mii (din care 7 mii sunt armata personală) - Vlad III Dracula-Țepeș, 250 mii - Mohammed. <br>Detașamentul zburător al lui Vlad III Dracula-Țepeș, epuizând treptat inamicul, provoacă atacuri vizate asupra otomanilor.</p>
+	</div>
+  </div>
+    <div class="container left">
+    <div class="content">
+      <h2>1462 (17 iunie)</h2>
+      <p>Celebrul „Atac de noapte” al lui Țepeș: invazia armatei personale a lui Vlad III Dracula în tabăra otomană de la marginea Târgoviței.<br> Rezultat: 30-35 otomani au fost uciși, sultanul a supraviețuit miraculos. <br>Vlad III Dracula-Țepeș - 1 mie capturați.<br> Vlad este ușor rănit în cap.</p>
+	</div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1462 (sfârșitul lui iunie)</h2>
+      <p>Armata otomană merge la Târgoviște, unde se poticnește cu o pădure de miză cu turci „dispăruți”, inclusiv Hamza Pașa și Yunus Bey.<br> Sultanul întoarce armata: la granițele cu Ungaria, armata lui Matthias este de serviciu, iar flota lui Ștefan cel Mare se apropie de Kilia, reducând în cele din urmă posibilitatea livrării de mâncare.<br> Vlad III Dracula-Țepeș trimite un detașament la Kiliya (cetatea aparține Ungariei, iar Ștefan reprezintă Polonia), iar Stefan se retrage. <br>După aceasta, Vlad III Dracula-Țepeș aduce o altă lovitură armatei otomane, care iese, învinge avangarda, dar se ciocnește cu forțele principale și se retrage.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1462 (toamnă-iarnă)</h2>
+      <p>Boierii valahi fac o alianță cu Radu împotriva lui Vlad III Dracula-Țepeș. <br>Radu îl împinge treptat pe Vlad spre nord.<br> După trădarea boierilor, Vlad este obligat să se retragă în Transilvania, unde acceptă să se întâlnească cu Matthias Corvin, care încă ține armata la granițe.<br> Negocierile au avut loc, totuși, la întoarcerea către Mutenia, Vlad fiind capturat de mercenarul ceh Jan искiskra, prin ordin personal al lui Matthias Corvin. <br>Înaintea coaliției europene anti-turce, Matthias se justifică prin scrisori falsificate, în care Vlad III Dracula-Țepeș promite că ar fi asistat sultanului său în capturarea Ungariei și Transilvaniei.<br> Tronul Țării Românești este ocupat de Radu cel Fourmos.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1463</h2>
+      <p>Vlad este închis în cetatea Pest.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1464</h2>
+      <p>Vlad III Dracula-Țepeș este transferat în fortăreața Vysehrad.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1464-1475(conform unor surse: 1464-1468)</h2>
+      <p>Vlad III Dracula-Țepeș este ținut captiv la Vysehrad, în turnul lui Solomon, împreună cu soția sa.<br> În cetate se nasc doi dintre fiii săi: Vlad, iar cel de al II-lea, se presupune că numele lui ar fi fost Mircea.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1475 (conform unor surse 1468)</h2>
+      <p>Vlad III Dracula-Țepeș a fost transferat în arest la domiciliu la Pest, unde severitatea supravegherii prizonierului este redusă treptat, în măsura în care acesta din urmă este permis instanței ungare.<br> I se permite să poarte arme în casă și să se întâlnească cu ambasadorii străini.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1475</h2>
+      <p>Tronul Țării Românești este ocupat de Lajosh (Lajota) Bessarab.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1475 (ianuarie)</h2>
+      <p>Vlad a fost eliberat la insistențele lui Ștefan cel Mare.<br> Vlad III Dracula-Țepeș se alătură din nou luptei anti-turce.<br> Sub comanda sa, trupele maghiare au luat cetatea Šabac din Serbia.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1475 (iarnă-primăvară)</h2>
+      <p>Vlad III Dracula-Țepeș, împreună cu Ștefan Batori (Bathory) se luptă în Serbia.<br> Apar din ce în ce mai mulți susținători ai lui Vlad III Dracula-Țepeș, care îi susțin dreptul la tronul Valah. <br>Matthias Corvin îl susține în egală măsură pe Vlad III Dracula-Țepeș și Laiosh Basaraba.</p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <h2>1476 (vară-toamnă)</h2>
+      <p>Sultanul încearcă o campanie împotriva Ungariei.<br> Vlad III Dracula-Țepeș și Ștefan Bathory se află în fruntea armatei unguro-valace. <br>Lor li se alătură Ștefan cel Mare.<br> Forțele combinate ale armatei turce au învins parțial.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1476 (26 noiembrie)</h2>
+      <p>Vlad III Dracula-Țepeș, cu sprijinul lui Ștefan cel Mare, îl învinge pe Lajos Basarab și cucerește pentru a treia oară tronul muntenesc.<br> Ștefan cel Mare se întoarce în Moldova, lăsându-i lui Vlad un detașament de 200 de persoane pentru protecție personală.</p>
+    </div>
+  </div>
+    <div class="container left">
+    <div class="content">
+      <h2>1476 (decembrie)</h2>
+      <p>Vlad III Dracula-Țepeș continuă operațiunile militare pe cont propriu și îi împinge pe turci spre sud.</p>
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <h2>1477 (ianuarie)</h2>
+      <p>Vlad III Dracula-Țepeș moare în luptă.</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
