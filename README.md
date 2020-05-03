@@ -21,14 +21,14 @@ Cu ajutorul acestora, am redat informaţiile despre Vlad Țepeș, astfel încât
 Baza de date "id13523907_dracula_bd".
 Baza de date "id13523907_dracula_bd" conţine 2 tabele: contact şi useri.<br>
 <div style="text-align: center;">
-<img width="849" height="306" src="./screenshots/ss2.jpg">
+<img width="849" height="306" src="./screenshots/ss2.png">
 </div>
 <br>
 <div style="text-align: center;">
-<img width="847" height="309" src="./screenshots/ss3.jpg">
+<img width="847" height="309" src="./screenshots/ss3.png">
 </div>
 <br><br>
 Gestiunea bazei de date se realizează prin intermediul aplicaţiei phpMyAdmin.<br>
 <div style="text-align: center;">
-<img width="1135" height="268" src="./screenshots/ss1.jpg">
+<img width="1135" height="268" src="./screenshots/ss1.png">
 </div>
