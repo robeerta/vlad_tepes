@@ -7,7 +7,7 @@ Pentru a accesa pagina propriu-zisă  va trebui să vă logați cu: Utilizator: 
 
 ## Arhitectura aplicatiei
 <div style="text-align: center;">
-<img width="950" height="550" src="./screenshots/ap.jpg">
+<img width="950" height="550" src="./screenshots/ap.png">
 </div>
 
 ## Despre pagina
